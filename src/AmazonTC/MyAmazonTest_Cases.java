@@ -29,7 +29,7 @@ public class MyAmazonTest_Cases {
         openBrowserChrome(amazonurl);
         burgerButton();
         primeVideoArrow();
-        amazonMusic();gi
+        amazonMusic();
         echoAlexa();
         fireTablet();
         fireTv();

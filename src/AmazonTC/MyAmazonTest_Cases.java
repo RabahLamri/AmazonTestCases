@@ -14,7 +14,8 @@ public class MyAmazonTest_Cases {
 
 
     static String burgerbuttonPath="//*[@id=\"nav-hamburger-menu\"]";
-    static String primeVideoPath="//*[@id=\"hmenu-content\"]/ul[34]/li[2]/a/div";
+    //*[@id="nav-hamburger-menu"]
+    static String primeVideoPath="//*[@id=\"hmenu-content\"]/ul[1]/li[2]/a";
     static String amazomMusicPath="//*[@id=\"hmenu-content\"]/ul[34]/li[3]/a/div";
     static String echoAlexaPath="//*[@id=\"hmenu-content\"]/ul[34]/li[4]/a/div";
     static String fireTabletPath="//*[@id=\"hmenu-content\"]/ul[34]/li[5]/a/div";
@@ -23,21 +24,28 @@ public class MyAmazonTest_Cases {
     static String clothingShoesJewelaryPath="//*[@id=\"hmenu-content\"]/ul[34]/li[10]/a/div";
     static String amazonFreshPath="//*[@id=\"hmenu-content\"]/ul[34]/li[11]/a/div";
     static String subscribeSavePath="//*[@id=\"hmenu-content\"]/ul[34]/li[12]/a/div";
+    String menuExpectedText="SHOP BY CATEGORY";
+    String menuActualText="//*[@id=\"hmenu-content\"]/ul[1]/li[1]/div";
+    String primeVideoExpectedText ="Prime Video";
+    String primeVideoActualText ="#a-page > div.DVWebNode-retail-nav-wrapper.DVWebNode.av-native-stick > div > a";
+
+
+
 
     public static void main(String[] args) throws InterruptedException {
 
-        openBrowserChrome(amazonurl);
-        burgerButton();
-        primeVideoArrow();
-        amazonMusic();
-        echoAlexa();
-        fireTablet();
-        fireTv();
-        kindleEReaderBooks();
-        appStoreForAndroid();
-        clothingShoesJewelary();
-        amazonFresh();
-        subscribeSave();
+       //   openBrowserChrome(amazonurl);
+        //burgerButton();
+          primeVideoArrow();
+//        amazonMusic();
+//        echoAlexa();
+//        fireTablet();
+//        fireTv();
+//        kindleEReaderBooks();
+//        appStoreForAndroid();
+//        clothingShoesJewelary();
+//        amazonFresh();
+//        subscribeSave();
 
 
     }
@@ -63,8 +71,12 @@ public class MyAmazonTest_Cases {
     public static void primeVideoArrow() throws InterruptedException {
         openBrowserChrome(amazonurl);
         driver.findElement(By.xpath(burgerbuttonPath)).click();
-        driver.findElement(By.xpath(primeVideoPath)).click();
         Thread.sleep(3000);
+        driver.findElement(By.xpath(primeVideoPath)).click();
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("#a-page > div.DVWebNode-retail-nav-wrapper.DVWebNode.av-native-stick > div > a")).click();
+        Thread.sleep(3000);
+
         driver.close();
     }
     public static void amazonMusic() throws InterruptedException {
@@ -129,5 +141,6 @@ public class MyAmazonTest_Cases {
         driver.findElement(By.xpath(subscribeSavePath)).click();
         Thread.sleep(3000);
         driver.close();
+
     }
 }

@@ -13,11 +13,11 @@ public class MyAmazonTest_Cases {
     static WebDriver driver;
 
 
-    static String burgerbuttonPath="//*[@id=\"nav-hamburger-menu\"]";
+    static String burgerbuttonPath="//*[@id=\"nav-hamburger-menu\"]/i";
     //*[@id="nav-hamburger-menu"]
     static String primeVideoPath="//*[@id=\"hmenu-content\"]/ul[1]/li[2]/a";
-    static String amazomMusicPath="//*[@id=\"hmenu-content\"]/ul[34]/li[3]/a/div";
-    static String echoAlexaPath="//*[@id=\"hmenu-content\"]/ul[34]/li[4]/a/div";
+    static String amazomMusicPath="//*[@id=\"hmenu-content\"]/ul[1]/li[3]/a";
+    static String echoAlexaPath="//*[@id=\"hmenu-content\"]/ul[1]/li[4]/a/div";
     static String fireTabletPath="//*[@id=\"hmenu-content\"]/ul[34]/li[5]/a/div";
     static String kindleEReaderBooksPath="//*[@id=\"hmenu-content\"]/ul[34]/li[7]/a/div";
     static String appStoreForAndroidPath="//*[@id=\"hmenu-content\"]/ul[34]/li[8]/a/div";
@@ -28,24 +28,33 @@ public class MyAmazonTest_Cases {
     String menuActualText="//*[@id=\"hmenu-content\"]/ul[1]/li[1]/div";
     String primeVideoExpectedText ="Prime Video";
     String primeVideoActualText ="#a-page > div.DVWebNode-retail-nav-wrapper.DVWebNode.av-native-stick > div > a";
+    String amazonMusicExpectedText ="Amazon Music";
+    String amazonMusicActualText ="//*[@id=\"hmenu-content\"]/ul[3]/li[1]/a";
+    String echoAlexaExpectedText ="Echo & Alexa";
+    String echoAlexaActualText ="//*[@id=\"hmenu-content\"]/ul[1]/li[4]/a/div";
+    String fireTabletActualText ="EFire Tablets";
+    String fireTabletExpectedText ="//*[@id=\"hmenu-content\"]/ul[1]/li[5]/a/div";
+    String fireTvActualText ="Fire TV";
+    String fireTvExpectedText ="//*[@id=\"hmenu-content\"]/ul[1]/li[6]/a";
+
 
 
 
 
     public static void main(String[] args) throws InterruptedException {
 
-       //   openBrowserChrome(amazonurl);
-        //burgerButton();
+          openBrowserChrome(amazonurl);
+        burgerButton();
           primeVideoArrow();
-//        amazonMusic();
-//        echoAlexa();
-//        fireTablet();
-//        fireTv();
-//        kindleEReaderBooks();
-//        appStoreForAndroid();
-//        clothingShoesJewelary();
-//        amazonFresh();
-//        subscribeSave();
+        amazonMusic();
+        echoAlexa();
+        fireTablet();
+        fireTv();
+        kindleEReaderBooks();
+        appStoreForAndroid();
+        clothingShoesJewelary();
+        amazonFresh();
+        subscribeSave();
 
 
     }
@@ -105,7 +114,8 @@ public class MyAmazonTest_Cases {
         driver.findElement(By.xpath(burgerbuttonPath)).click();
         driver.findElement(By.xpath(fireTabletPath)).click();
         Thread.sleep(3000);
-        driver.close();
+        //driver.close();
+        driver.quit();
     }
     public static void kindleEReaderBooks() throws InterruptedException {
         openBrowserChrome(amazonurl);

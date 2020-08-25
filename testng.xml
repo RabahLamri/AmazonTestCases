@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/rabahlamri/IdeaProjects/AmazonTestCases">
+        <classes>
+            <class name="AmazonTC.UnitTesting">
+                <methods>
+                    <include name="testburgerButton"/>
+                    <include name="testprimeVideoArrow"/>
+                </methods>
+            </class>
+            <class name="tdbankTestcases.TdTestCaseTest">
+                <methods>
+                    <include name="testCommercialButtonCheck"/>
+                    <include name="testSmallBusinessCheck"/>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
